@@ -1,0 +1,68 @@
+.external {
+}
+
+
+.side-nav {
+  width: 15%;
+  min-height: 200px;
+  position: fixed;
+  left: 0;
+  top: 13%;
+  background: white;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.profile-container {
+  width: 100%;
+  height: 50%;
+  margin: 20px 0;
+}
+
+.profile-picture {
+  position: relative;
+  width: 75%;
+  border-radius: 100%;
+  left: 12.5%;
+
+}
+.profile-name {
+  width: 100%;
+  text-align: center;
+  padding-top: 5px;
+  color: rgb(25,28,144);
+  font-weight: 600;
+  font-size: 1.4em;
+}
+
+.side-nav-quick-links {
+  padding-left: .8em;
+  overflow-wrap: normal;
+}
+
+
+
+.side-nav-quick-links a {
+  padding: 5px 100px 5px 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2em;
+  position: relative;
+}
+
+.side-nav-quick-links a:hover {
+  text-decoration: none;
+  font-weight: 600;
+  color: rgba(140,160,170,1);
+}
+
+.side-nav-quick-links a:hover::after {
+  content: "";
+  background: rgb(25,28,144);
+  position: absolute;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  height: 100%;
+  top: 0;
+  left: -.7em;
+}

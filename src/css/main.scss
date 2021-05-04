@@ -1,0 +1,26 @@
+//Variables
+$faint-grey: #adadad;
+$faint-grey-link: darken($faint-grey, 5%);
+$faint-grey-hover: darken($faint-grey, 15%);
+
+body {
+}
+
+button.unstyle {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  // background: purple;
+  padding: 0;
+  text-decoration: none;
+  text-decoration: underline;
+  color: $faint-grey-link;
+
+  &:hover {
+    color: $faint-grey-hover;
+  }
+}

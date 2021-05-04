@@ -1,0 +1,266 @@
+.projects {
+  // display: absolute;
+  // top: 0;
+  // left: 0;
+  // height: 100%;
+
+  .project-card {
+    color: #4d4d4d;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px 0;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+
+    & > div {
+      padding: 0;
+      position: relative;
+      padding: 5px;
+
+      &:not(:first-child):before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 80%;
+        top: 10%;
+        left: 0;
+        background: #ccc;
+      }
+    }
+
+    .project-card-image {
+      padding: 5px;
+      img {
+        max-height: 200px;
+        max-width: 200px;
+        border-radius: 5px;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        padding: 3px;
+        width: 100%;
+        height: 100%;
+        &:hover {
+          background: #eee;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .project-card-description {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 15px;
+
+      a {
+      }
+    }
+
+    .project-card-title {
+      // width: 180px;
+      // min-width: 180px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      a {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        p {
+          margin: auto;
+        }
+        &:hover {
+          background: #eee;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .project-card-links {
+      min-width: 50px;
+      font-size: 1.2rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .link {
+      margin: 5px;
+      img {
+        width: 25px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: #0a0a0a;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  //desktop & tablet
+  @media screen and (min-width: 1050px) {
+    .project-card-title {
+      width: 180px;
+      min-width: 180px;
+    }
+    .project-card-image {
+      display: flex;
+      align-items: center;
+    }
+
+    .project-card-links {
+      flex-direction: column;
+    }
+  }
+
+  //mobile
+  @media screen and (max-width: 1050px) {
+    .project-card {
+      display: block;
+      position: relative;
+    }
+
+    .project-card-title {
+      display: block;
+      position: relative;
+      // background: red;
+      width: 100%;
+      a {
+        padding: 10px;
+      }
+    }
+
+    .project-card-description {
+      display: none;
+
+      p {
+        max-height: 1.2rem;
+        overflow-y: hidden;
+        text-overflow: clip;
+      }
+    }
+
+    .project-card-image {
+      display: block;
+      position: relative;
+      padding: 5px;
+      text-align: center;
+      img {
+        max-height: 200px;
+        max-width: 200px;
+        border-radius: 5px;
+        margin: auto;
+      }
+    }
+
+    .project-card-links {
+      flex-direction: row;
+    }
+    .project-card-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+//
+//
+//
+
+.project-card-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    display: inline-block;
+    background: red;
+    padding: 0px 8px;
+    border-radius: 4px;
+    margin: 3px 3px;
+
+    $desaturate: 30%;
+    $darken: 10%;
+
+    &[type="3D Printing"] {
+      $main: rgb(222, 90, 0);
+      $main: desaturate($main, $desaturate);
+      background: $main;
+      color: white;
+      border: solid 2px darken($main, $darken);
+    }
+    &[type="Arduino"] {
+      $main: #008184;
+      $main: desaturate($main, $desaturate);
+      background: $main;
+      color: white;
+      border: solid 2px darken($main, $darken);
+    }
+    &[type="Node.js"] {
+      $main: rgb(104, 159, 99);
+      // $main: desaturate($main, $desaturate);
+      background: $main;
+      color: white;
+      border: solid 2px darken($main, $darken);
+    }
+
+    &[type="MQTT"] {
+      $main: rgb(102, 0, 102);
+      $main: desaturate($main, $desaturate);
+      background: $main;
+      color: white;
+      border: solid 2px darken($main, $darken);
+    }
+    &[type="Express"] {
+      $main: rgb(220, 220, 220);
+      $main: desaturate($main, $desaturate);
+      background: $main;
+      color: black;
+      border: solid 2px darken($main, $darken);
+    }
+    &[type="React"] {
+      $main: #61dafb;
+      $main: desaturate($main, $desaturate);
+      background: $main;
+      color: #282c34;
+      border: solid 2px darken($main, $darken);
+    }
+    &[type="AWS"] {
+      $main: #f8991d;
+      $main: desaturate($main, $desaturate);
+      background: $main;
+      color: #232f3e;
+      border: solid 2px darken($main, $darken);
+    }
+    &[type="P5.js"] {
+      $main: #ed225d;
+      $main: desaturate($main, $desaturate);
+      background: $main;
+      color: #fff;
+      border: solid 2px darken($main, $darken);
+    }
+    &[type="Python"] {
+      $main: #2b5b84;
+      $main: desaturate($main, $desaturate);
+      background: $main;
+      color: #ffd343;
+      border: solid 2px darken($main, $darken);
+    }
+    &[type="SQL"] {
+      $main: #1565bf;
+      $main: desaturate($main, $desaturate);
+      background: $main;
+      color: #fff;
+      border: solid 2px darken($main, $darken);
+    }
+  }
+}
