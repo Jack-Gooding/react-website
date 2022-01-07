@@ -80,7 +80,7 @@ export default function Home(props) {
                 </a>
               </li>
               <li>
-                <a href="mailto:jack-gooding@outlook.com">
+                <a href="mailto:jack-gooding-@outlook.com">
                   <FontAwesomeIcon type="email" icon={faEnvelope} />
                 </a>
               </li>

@@ -56,6 +56,10 @@
       justify-content: center;
       padding: 15px;
 
+      p {
+        white-space: pre-wrap;
+      }
+
       a {
       }
     }
@@ -260,6 +264,13 @@
       $main: desaturate($main, $desaturate);
       background: $main;
       color: #fff;
+      border: solid 2px darken($main, $darken);
+    }
+    &[type="Processing"] {
+      $main: #2c7bb5;
+      $main: desaturate($main, $desaturate);
+      background: $main;
+      color: lighten(#b2b2b2, 20%);
       border: solid 2px darken($main, $darken);
     }
   }

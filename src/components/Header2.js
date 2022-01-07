@@ -38,7 +38,7 @@ export default function Header(props) {
     <>
       <div ref={wrapperRef} className="header-bar">
         <div className="logo">
-          <span>Jack Gooding</span>
+          <a href="/">Jack Gooding</a>
         </div>
         <div className="nav-menu">
           <ul>

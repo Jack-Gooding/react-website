@@ -9,6 +9,7 @@ import {
   faMapMarkerAlt,
   faEnvelope,
   faGlobe,
+  faExternalLinkAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -100,18 +101,18 @@ export default function CV(props) {
                   I'm a technology enthusiast, very interested in making things
                   both physical and digital. I enjoy a challenge and love
                   solving problems. I've always been very interested in
-                  computers and the surrounding technology and I'm very up to
-                  date with news, updates and releases. I have extensive
-                  experience supporting all major operating systems, mobile
-                  devices and peripherals.
+                  computers and the surrounding technology and am very up to
+                  date with news, updates and releases. I have experience
+                  developing software and extensive experience providing
+                  software support.
                 </p>
               </section>
               <section>
                 <h2 className="section-title">Skills</h2>
-                <table className="section-content">
+                <table className="section-table smaller">
                   <tr>
                     <td>Web:</td>
-                    <td>HTML, CSS, LESS/SASS, JavaScript, JQuery, Angular</td>
+                    <td>JavaScript, HTML, CSS, SASS, JQuery, Angular</td>
                   </tr>
                   <tr>
                     <td>Server:</td>
@@ -125,20 +126,77 @@ export default function CV(props) {
                     </td>
                   </tr>
                   <tr>
-                    <td>Addition Experience:</td>
+                    <td>Additional Experience:</td>
                     <td>
-                      Escalation Support, Equipment Installation, SQL/SQLite,
-                      AWS/Azure
+                      Customer Service, Escalation Support, Equipment
+                      Installation
                     </td>
                   </tr>
                 </table>
               </section>
               <section>
-                <h2 className="section-title project-container">
-                  Personal Projects
-                </h2>
+                <h2 className="section-title project-container">Projects</h2>
                 <div>
-                  <h4 className="section-sub-title">Personal Website</h4>
+                  <h4 className="section-sub-title">
+                    <a href="#">
+                      Home Automation
+                      <span className="faint small"> - Personal</span>
+                      <FontAwesomeIcon
+                        className="not-print faint"
+                        icon={faExternalLinkAlt}
+                      />
+                    </a>
+                  </h4>
+                  <p className="section-sub-content">
+                    An ongoing endeavour, spanning many different microservices
+                    and devices with the goal of contolling all the IoT devices
+                    in my home through simple interfaces. The main structure
+                    consists of an MQTT broker hosted on an AWS EC2 instance
+                    with a controlling server running locally on a Raspberry Pi.
+                    The local server handles many local devices, some being
+                    commercial products like smart bulbs, plugs and sensors,
+                    with others being MQTT devices I have built, such as an{" "}
+                    <a href="https://jack-gooding.com/projects/keypad">
+                      MQTT keypad
+                    </a>
+                    , various lights, sensors, and a set of{" "}
+                    <a href="https://www.youtube.com/watch?v=n9Rm_RFn6rI">
+                      motorised window blinds
+                    </a>
+                    .
+                  </p>
+                </div>
+                <div>
+                  <h4 className="section-sub-title">
+                    <a href="#">
+                      Data Exporter
+                      <span className="faint small"> - Webrecruit</span>
+                      <FontAwesomeIcon
+                        className="not-print faint"
+                        icon={faExternalLinkAlt}
+                      />
+                    </a>
+                  </h4>
+                  <p className="section-sub-content">
+                    At Webrecruit, clients often request their successful
+                    applicant's data exported in specific formats which they can
+                    then import into their HR management software. One of our
+                    larger clients requested we build a recurring export,
+                    containing all recently successful candidates, delivered
+                    into an SFTP server.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="section-sub-title">
+                    <a href="#">
+                      Portfolio Website
+                      <span className="faint small"> - Personal</span>
+                      <FontAwesomeIcon
+                        className="not-print faint"
+                        icon={faExternalLinkAlt}
+                      />
+                    </a>
+                  </h4>
                   <p className="section-sub-content">
                     As a test of my abilities, I put together a static personal
                     website with multiple sections, routed through Angular. This
@@ -147,31 +205,6 @@ export default function CV(props) {
                     are also several subdomains attached which are linked to
                     various servers I have between AWS and local devices. This
                     CV is written using HTML and hosted here.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="section-sub-title">Home Automation</h4>
-                  <p className="section-sub-content">
-                    A NodeJs server running on a Rasberry Pi 3b: this project's
-                    goal is to control all the IoT devices I have from one
-                    interface, from commercial products to devices that I've
-                    made using either Arduino microcontrollers or a Raspberry
-                    Pi. These devices include Philips Hue Bulbs, TP-Link WiFi
-                    Plugs, Temperature/Humidity Sensors, databases,
-                    Stepper/Servo Motors and WS2812b LED strips.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="section-sub-title">Idle Game</h4>
-                  <p className="section-sub-content">
-                    I have always enjoyed Idle Games, and I thought that
-                    creating one would be a good way of increasing my knowledge
-                    of JavaScript and general web design. I started building
-                    while still learning a lot of the basics of JavaScript as an
-                    outlet to experiment and try the new methods I learned in an
-                    actual project. I set myself the challenge of having as
-                    little HTML hard coded, and instead generating it using
-                    JavaScript and a few objects as a base.
                   </p>
                 </div>
               </section>
@@ -202,8 +235,19 @@ export default function CV(props) {
                     <span className="faint"> - Webrecruit</span>
                   </h4>
                   <div>
-                    <ul>
-                      <li>Support</li>
+                    <ul classname="smaller">
+                      <li>
+                        Liase directly with clients, handling bug reports,
+                        diagnosing faults, providing training.
+                      </li>
+                      <li>
+                        Manage IT assets, ensuring all staff have adequate
+                        tools. Handle repairs, upgrades or
+                      </li>
+                      <li>
+                        Maintain business critical IT infrastruture, managing
+                        network routers, switches and VOIP systems.
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -214,8 +258,7 @@ export default function CV(props) {
                     <span className="faint"> - John Lewis</span>
                   </h4>
                   <p className="section-sub-content">
-                    {" "}
-                    In this role, my main responsibility is to provide advanced
+                    In this role, my main responsibility was to provide advanced
                     specialist support for colleagues in the lower tiers of
                     customer support. This support is primarily troubleshooting
                     issues customers have faced with their purchases, whether
@@ -229,11 +272,6 @@ export default function CV(props) {
                     managerial positions, direct customer support and staff
                     training.
                   </p>
-                  <div>
-                    <ul>
-                      <li>Support</li>
-                    </ul>
-                  </div>
                 </div>
               </section>
               <section>
@@ -249,7 +287,7 @@ export default function CV(props) {
                         - Lower Second Class Honours
                       </span>
                     </h6>
-                    <table className="section-content">
+                    <table className="section-table smaller faint">
                       <tr>
                         <td>Engineering Drawing, CAD, and Design</td>
                         <td>69%</td>
@@ -259,11 +297,11 @@ export default function CV(props) {
                         <td>64%</td>
                       </tr>
                       <tr>
-                        <td>Engineering Mathematics</td>
+                        <td>Integrated System Design</td>
                         <td>61%</td>
                       </tr>
                       <tr>
-                        <td>Integrated System Design</td>
+                        <td>Engineering Mathematics</td>
                         <td>61%</td>
                       </tr>
                       <tr>
@@ -275,12 +313,11 @@ export default function CV(props) {
                         <td>59%</td>
                       </tr>
                     </table>
-                    <br />
                     <p>
                       As part of my Third Year at Plymouth University, I
                       completed a dissertation on efficient energy generation in
                       rural areas, which focused on a small village in Cameroon,
-                      West Africa, with a very weak and unreliable power grid. I
+                      West Africa, with a weak and unreliable power grid. I
                       researched the area, determined which method of energy
                       generation was most suitable, selecting wind turbines as
                       the most practical and then tested several designs to
@@ -294,11 +331,11 @@ export default function CV(props) {
                   <h4 className="section-sub-title">Tavistock College</h4>
                   <div className="section-sub-content">
                     <h6>A-Levels</h6>
-                    <p className="section-sub-sub-content">
+                    <p className="section-sub-sub-content smaller">
                       A* - Electronics (100%), B - Maths, B - Physics
                     </p>
                     <h6>GCSEs</h6>
-                    <p className="section-sub-sub-content">
+                    <p className="section-sub-sub-content smaller">
                       11 GCSEs including Electronics, Maths, Physics, Chemistry,
                       Biology and Graphic Design
                     </p>
@@ -355,18 +392,21 @@ function Sidebar(props) {
         </div>
       </div>
       <Hr />
-
-      <h2 className="section-title">Key Skills</h2>
-      <SkillBars />
+      <div>
+        <h2 className="section-title">Key Skills</h2>
+        <SkillBars />
+      </div>
       <Hr />
 
-      <div>
-        <h2 className="section-title">Attributes</h2>
+      <div className="attributes">
+        <h2 className="section-title">Strengths</h2>
         <ul>
           <li>Logical</li>
           <li>Quick Learner</li>
           <li>Enthusiatic</li>
           <li>Adaptable</li>
+          <li>Professional</li>
+          <li>Customer Service</li>
         </ul>
       </div>
     </div>
@@ -375,7 +415,7 @@ function Sidebar(props) {
 
 let skills = [
   {
-    name: "Javascript",
+    name: "JavaScript",
     level: 0.9,
   },
   {

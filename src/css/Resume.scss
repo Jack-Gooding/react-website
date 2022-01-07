@@ -2,8 +2,11 @@
 $faint-grey: #adadad;
 $faint-grey-link: darken($faint-grey, 5%);
 $faint-grey-hover: darken($faint-grey, 15%);
+$font-col: #212529;
+$font-col-darker: darken($font-col, 20%);
+$font-col-lighter: lighten($font-col, 20%);
+$indent: 14px;
 
-$indent: 20px;
 //Mixins
 //.no-select() {
 //-webkit-user-select: none;  /* Chrome all / Safari all */
@@ -11,6 +14,10 @@ $indent: 20px;
 //-ms-user-select: none;      /* IE 10+ */
 //user-select: none;          /* Likely future */
 //}
+
+@mixin condensed {
+  line-height: 1.2rem;
+}
 
 //Styles
 
@@ -51,7 +58,27 @@ $indent: 20px;
     display: flex;
     overflow: hidden;
   }
-
+  a,
+  button {
+    position: relative;
+    z-index: 1;
+    &:hover {
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        transform: scale(1.1);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(232, 231, 136, 0.3);
+        box-shadow: 0 1px 10px rgba(232, 231, 136, 0.3);
+        z-index: -1;
+        white-space: pre-wrap;
+      }
+    }
+  }
   hr {
     // margin: 0;
     // padding: 0;
@@ -73,6 +100,25 @@ $indent: 20px;
     width: 14rem;
     background: rgb(200, 205, 220);
     height: 100%;
+
+    .attributes {
+      ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        margin-left: 1rem;
+        li {
+          padding: 5px;
+          margin: 5px;
+          border: solid 1px grey;
+        }
+      }
+    }
+    & > div {
+      margin: 2rem 0;
+    }
   }
   .main {
     // display: inline-block;
@@ -88,6 +134,8 @@ $indent: 20px;
     // padding-right: 1rem;
     // padding-left: 1rem;
     margin: $margin;
+    margin-left: $margin / 2;
+    color: $font-col;
     // margin-top: 2rem;
     // overflow-y: scroll;
 
@@ -96,7 +144,7 @@ $indent: 20px;
 
   .summary {
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.2rem;
   }
 
   .indent {
@@ -225,7 +273,7 @@ $indent: 20px;
 }
 
 p {
-  line-height: 1.32;
+  @include condensed;
 }
 
 h1 {
@@ -236,7 +284,6 @@ h1 {
 .section-block {
   position: relative;
   display: block;
-  border: solid 1px blue;
   .section-date {
     display: block;
     width: 7rem;
@@ -278,13 +325,30 @@ h1 {
   }
 }
 .faint {
-  color: lighten(black, 40%);
-  font-size: 0.8em;
-  font-weight: normal;
+  color: $font-col-lighter;
 }
-.section-sub-title {
-  font-weight: bold;
-  font-size: 1.2rem;
+.darker {
+  color: $font-col-darker;
+}
+.smaller {
+  font-size: 0.8rem;
+}
+.section-table {
+  margin: auto;
+  width: 100%;
+  tr {
+    @include condensed;
+    td:first-of-type {
+      padding-left: 2rem;
+    }
+    td:last-of-type {
+      min-width: 10rem;
+      // text-align: center;
+    }
+  }
+  td {
+    margin: auto;
+  }
 }
 .section-sub-title,
 .section-content {
@@ -292,8 +356,36 @@ h1 {
   padding: 0;
   margin-left: $indent;
 }
+.section-sub-title {
+  // font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.4rem;
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  svg {
+    margin-left: 10px;
+    font-size: 1rem;
+  }
+}
+.section-table {
+  margin-bottom: 1.2rem;
+}
 .section-sub-content {
   margin-left: 2 * $indent;
+  a {
+    color: $font-col-lighter;
+    text-decoration: underline;
+  }
 }
 .section-sub-sub-content {
   margin-left: 3 * $indent;
@@ -339,7 +431,7 @@ footer {
   position: absolute;
   display: block;
   right: 1rem;
-  bottom: 0;
+  bottom: 5px;
   color: darken($faint-grey, 10%);
   // background: red;
 }

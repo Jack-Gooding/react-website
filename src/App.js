@@ -8,6 +8,7 @@ import Projects from "./containers/Projects";
 import Tutorials from "./containers/Tutorials";
 import Keypad from "./components/projects/Keypad";
 import ClickTracker from "./components/projects/ClickTracker";
+import FacebookDigester from "./components/projects/FacebookDigester";
 
 import E404 from "./components/projects/E404";
 
@@ -74,6 +75,13 @@ function App() {
                     exact
                     path="/projects/click-tracker"
                     component={() => <ClickTracker title={"Click Tracker"} />}
+                  />
+                  <Route
+                    exact
+                    path="/projects/facebook-digest"
+                    component={() => (
+                      <FacebookDigester title={"Facebook Digester"} />
+                    )}
                   />
                   <Route
                     exact

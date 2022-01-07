@@ -151,6 +151,9 @@ let RenderCreate = (props) => {
       // console.log(res);
       return res;
     } catch (e) {
+      if (e.response == null) {
+        return null;
+      }
       if (e.response.status === 429) {
         let secondsRemaining = Math.round(
           moment(e.response.data.resetTime).diff(moment(), "seconds")

@@ -2,11 +2,13 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 import todoImg from "../images/todo_logo.png";
+import urlImg from "../images/projects/URL-shortener/thumb.png";
 import expImg from "../images/life.bmp";
 import mqttImg from "../images/mqtticon-large.png";
 import keypadImg from "../images/projects/keypad1.jpg";
 import automationImg from "../images/favicon.ico";
 import heatmapImg from "../images/projects/click-tracker/colourmap-min.png";
+import facebookImg from "../images/projects/facebook-digest/james-o.svg";
 
 import thingiverseImg from "../images/thingiverse.png";
 // import faYoutube from "../images/youtube.svg";
@@ -54,7 +56,8 @@ export default class Projects extends React.Component {
             externalUrl="https://experiments.jack-gooding.com"
             img={expImg}
             title="Experiments"
-            description="This page is mainly a repository for any small projects i've made with no real function or end-goal other than my own enjoyment, mainly these experiments are made using a HTML5 canvas element and P5.js. The experiments i'm most pleased with are the Trapped Knight, Tearing and Mobius Rotation."
+            description="This page is mainly a repository for any small projects i've made with no real function or end-goal other than my own enjoyment, mainly these experiments are made using a HTML5 canvas element and P5.js.
+The experiments i'm most pleased with are the Trapped Knight, Tearing and Mobius Rotation."
             tags={["P5.js", "AWS"]}
             links={[
               {
@@ -69,14 +72,13 @@ export default class Projects extends React.Component {
             externalUrl="https://broker.jack-gooding.com"
             img={automationImg}
             title="Home Automation Server"
-            description={`
-                A Node.js server for personal use, to control as much of my home as posible.
-                Will be controlling several IoT Devices, both commercial and made by myself.
-                Made using React.js.
-                This server controls: Philips Hue Lights, TP-Link Smart Plugs, several Arduino devices attached to: WS2812b RGB LED strips, Temperature/Humidity monitors, Stepper motors, along with several commercial products.
-                It's currently hosted and visible on an AWS EC2 instance, however it is also currently running on a Raspberry Pi at my home.
+            description={`A Node.js server for personal use, to control as much of my home as posible.
+Will be controlling several IoT Devices, both commercial and made by myself.
+Made using React.js.
+This server controls: Philips Hue Lights, TP-Link Smart Plugs, several Arduino devices attached to: WS2812b RGB LED strips, Temperature/Humidity monitors, Stepper motors, along with several commercial products.
+It's currently hosted and visible on an AWS EC2 instance, however it is also currently running on a Raspberry Pi at my home.
 
-                This project has been merged with my MQTT broker to replace many of the API calls within my home with MQTT messages. This greatly helps with maintenance and extensibility.
+This project has been merged with my MQTT broker to replace many of the API calls within my home with MQTT messages. This greatly helps with maintenance and extensibility.
                 `}
             tags={["Node.js", "MQTT", "Express", "React", "Python", "AWS"]}
             links={[
@@ -93,7 +95,8 @@ export default class Projects extends React.Component {
             externalUrl="https://broker.jack-gooding.com"
             img={mqttImg}
             title="MQTT Broker"
-            description="I created an MQTT server hosted on an AWS EC2 instance and a dozen devices to interface with it!"
+            description="An MQTT broker hosted on an AWS EC2 instance.
+Designed to support my MQTT Home Automation Server which controls several commercial HA devices and a handful of custom designed/built MQTT devices."
             tags={["MQTT", "AWS"]}
             links={[{ url: "link1", img: faGithub }]}
           />
@@ -106,22 +109,19 @@ export default class Projects extends React.Component {
             externalUrl="projects/click-tracker"
             img={heatmapImg}
             title="Click Tracker"
-            description={`
-              I was interested in tracking where I clicked most during my work at Webrecruit, so created a basic click tracker using robot.js and stored the results in an SQLite database.
-              The database is exported manually to several images.
-                `}
+            description={`I was interested in tracking where I clicked most during my work at Webrecruit, so created a basic click tracker using robot.js and stored the results in an SQLite database.
+The database is exported manually to several images.`}
             tags={["SQL", "Node.js"]}
             links={[{ url: "link1", img: faGithub }]}
           />
           <Project
             projectUrl="projects/facebookdigest"
             externalUrl="projects/facebookdigest"
-            img={heatmapImg}
+            img={facebookImg}
             title="Facebook Data Digest"
-            description={`
-              Some of my friendships and relationships have existed online almost entirely on Facebook. After discovering their excellent data export tools, I was interested in representing these interactions in some intuitive way.
-              I used Node.js to parse the JSON structure of these files into a usable format and hosted them using Express, then used Processing to visualise them.
-                `}
+            description={`For some of my friendships and relationships, the online aspect has been almost completely through Facebook.
+After discovering their excellent JSON data export tools, I was interested in representing these interactions in some intuitive way.
+I used Node.js to parse the JSON structure of these files into a usable format and hosted them using Express, then used Processing to visualise them.`}
             tags={["Node.js", "Processing", "Express"]}
             links={[{ url: "link1", img: faGithub }]}
           />
@@ -141,13 +141,15 @@ It, like all my other viewable projects are hosted on an AWS EC2 instance, and a
           <Project
             projectUrl="url"
             externalUrl="url"
-            img={todoImg}
+            img={urlImg}
             title="URL Shortener"
-            description={`This To Do app is a Node.js experiment to increase my knowledge of SQL/SQLite.
-It's built using Node.js and React, with several features planned, primarily multiple users with some form of authentication and notifications when a task is due.
-It, like all my other viewable projects are hosted on an AWS EC2 instance, and accessible as a subdomain.`}
+            description={`This URL shortener is built as an alternative to Bit.ly or other URL shortener services.
+URL clicks are tracked, and can be easily routed through the hosting domain.`}
             links={[
-              { url: "https://todo.jack-gooding.com", img: faExternalLinkAlt },
+              {
+                url: "https://url.jack-gooding.com/urls",
+                img: faExternalLinkAlt,
+              },
               { url: githubUrl, img: faGithub },
             ]}
           />
@@ -156,7 +158,8 @@ It, like all my other viewable projects are hosted on an AWS EC2 instance, and a
             externalUrl="https://assets.jack-gooding.com"
             img={expImg}
             title="Asset Manager"
-            description="An asset manager I created to help inventory management while working as an IT Technician. Very specific to my needs at the time, this asset manager has many linked database tables, displayed in a simple UI."
+            description="An asset manager I created to help inventory management while working as an IT Technician.
+Very specific to my needs, this asset manager has many linked database tables, displayed in a simple UI."
             links={[{ url: "link1", img: faGithub }]}
           />
         </div>
